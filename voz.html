@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Resolutor por Voz - MateMaster</title>
+  <link rel="stylesheet" href="voz.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-microphone"></i> Resolutor por Voz</h1>
+      <p>Di tu operación y obtén la respuesta al instante</p>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Volver al inicio</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="voice-section">
+        <button id="btn-mic" class="btn-mic">
+          <i class="fas fa-microphone"></i><br>
+          <span id="mic-text">Presiona y habla</span>
+        </button>
+        <div id="transcription" class="transcription"></div>
+      </section>
+
+      <section id="result-box" class="result-box hidden">
+        <h2>Resultado</h2>
+        <p id="result-text"></p>
+        <button id="btn-speak" class="btn-secondary">
+          <i class="fas fa-volume-up"></i> Escuchar respuesta
+        </button>
+      </section>
+
+      <div class="examples">
+        <h3>Ejemplos de frases:</h3>
+        <ul>
+          <li>¿Cuánto es 8 por 7?</li>
+          <li>20 dividido entre 4</li>
+          <li>Raíz cuadrada de 81</li>
+          <li>15 más 9 menos 3</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <script src="voz.js"></script>
+</body>
+</html>

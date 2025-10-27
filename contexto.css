@@ -1,0 +1,99 @@
+:root{
+  --verde-oscuro:#1b5e20;
+  --verde-medio:#388e3c;
+  --verde-claro:#66bb6a;
+  --verde-menta:#c8e6c9;
+  --verde-suave:#e8f5e9;
+  --blanco:#fff;
+  --sombra:rgba(0,0,0,.15);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+  background:linear-gradient(to bottom,var(--verde-suave),var(--verde-menta));
+  color:var(--verde-oscuro);
+  padding:10px;
+}
+.container{max-width:900px;margin:auto}
+header{
+  background:linear-gradient(to right,var(--verde-oscuro),var(--verde-medio));
+  color:var(--blanco);
+  padding:1.5rem;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 6px 15px var(--sombra);
+}
+header h1{font-size:2.2em;margin-bottom:10px}
+header p{font-size:1.1em;color:#dcedc8}
+nav a{
+  color:var(--blanco);
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:25px;
+  background:var(--verde-claro);
+  transition:all .3s ease;
+}
+nav a:hover{background:var(--verde-oscuro);transform:translateY(-2px)}
+main{margin-top:30px}
+.card{
+  background:var(--blanco);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 12px var(--sombra);
+}
+.config{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+  margin-bottom:20px;
+}
+.config label{
+  font-weight:bold;
+}
+.config select{
+  padding:8px 12px;
+  border:2px solid var(--verde-claro);
+  border-radius:10px;
+  font-size:1em;
+}
+.btn-primary,.btn-secondary{
+  border:none;padding:10px 20px;border-radius:25px;font-weight:bold;cursor:pointer;transition:background .3s ease;
+}
+.btn-primary{background:var(--verde-medio);color:var(--blanco)}
+.btn-primary:hover{background:var(--verde-oscuro)}
+.btn-secondary{background:var(--verde-claro);color:var(--blanco)}
+.historia,.pregunta{
+  background:var(--verde-suave);
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+  border-left:5px solid var(--verde-claro);
+}
+.opciones{display:grid;gap:10px;margin-bottom:15px}
+.opciones button{
+  background:var(--verde-suave);
+  border:2px solid var(--verde-claro);
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.opciones button:hover{background:var(--verde-claro);color:var(--blanco)}
+.opciones button.correct{background:#4caf50;color:var(--blanco)}
+.opciones button.incorrect{background:#f44336;color:var(--blanco)}
+.solucion-box{margin-top:20px}
+#pasos{margin-left:20px;margin-bottom:15px}
+.pizarra-container{text-align:center}
+#pizarra{border:2px solid var(--verde-medio);border-radius:10px;background:var(--blanco)}
+.pizarra-controls{margin-top:10px}
+.pizarra-controls button,.pizarra-controls input{margin:5px;padding:6px 10px;border-radius:8px;border:1px solid var(--verde-claro)}
+.hidden{display:none}
+@media (max-width:600px){
+  .config{flex-direction:column;align-items:center}
+}

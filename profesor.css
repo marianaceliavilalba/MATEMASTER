@@ -1,0 +1,51 @@
+:root{
+  --verde-oscuro:#1b5e20;
+  --verde-medio:#388e3c;
+  --verde-claro:#66bb6a;
+  --verde-menta:#c8e6c9;
+  --verde-suave:#e8f5e9;
+  --blanco:#fff;
+  --rojo:#f44336;
+  --sombra:rgba(0,0,0,.15);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+  background:linear-gradient(to bottom,var(--verde-suave),var(--verde-menta));
+  color:var(--verde-oscuro);
+  padding:10px;
+}
+.container{max-width:900px;margin:auto}
+header{
+  background:linear-gradient(to right,var(--verde-oscuro),var(--verde-medio));
+  color:var(--blanco);
+  padding:1.5rem;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 6px 15px var(--sombra);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+}
+header h1{font-size:2.2em}
+nav a,header button{background:var(--verde-claro);color:var(--blanco);border:none;padding:8px 16px;border-radius:20px;text-decoration:none;margin-left:10px;cursor:pointer;transition:background .3s ease}
+nav a:hover,header button:hover{background:var(--verde-oscuro)}
+.card{background:var(--blanco);padding:25px;border-radius:15px;box-shadow:0 4px 12px var(--sombra);margin-bottom:25px}
+.hidden{display:none}
+.btn-primary,.btn-secondary,.btn-danger{
+  border:none;padding:10px 20px;border-radius:25px;font-weight:bold;cursor:pointer;transition:background .3s ease;margin:5px;
+}
+.btn-primary{background:var(--verde-medio);color:var(--blanco)}
+.btn-primary:hover{background:var(--verde-oscuro)}
+.btn-secondary{background:var(--verde-claro);color:var(--blanco)}
+.btn-danger{background:var(--rojo);color:var(--blanco)}
+input[type=password]{padding:10px;border:2px solid var(--verde-claro);border-radius:10px;font-size:1em}
+#login-error{color:var(--rojo);margin-top:10px}
+.resumen{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:1.1em}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:10px;text-align:center}
+th{background:var(--verde-suave)}
+tr:nth-child(even){background:var(--verde-menta)}
+.acciones-globales{display:flex;gap:15px;justify-content:center;margin-top:20px}

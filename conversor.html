@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Conversor de Unidades - MateMaster</title>
+  <link rel="stylesheet" href="conversor.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-exchange-alt"></i> Conversor de Unidades</h1>
+      <p>Convierte y guarda tu historial</p>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <button id="btn-dark" class="btn-dark"><i class="fas fa-moon"></i></button>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="conversor">
+        <label>Categoría:
+          <select id="categoria">
+            <option value="longitud">Longitud</option>
+            <option value="masa">Masa</option>
+            <option value="tiempo">Tiempo</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="divisa">Divisa EUR ↔ USD</option>
+          </select>
+        </label>
+
+        <div class="inputs-row">
+          <input type="number" id="valor" placeholder="Valor">
+          <select id="de"></select>
+          <span>➡</span>
+          <select id="a"></select>
+          <output id="resultado">--</output>
+        </div>
+
+        <div class="acciones">
+          <button id="btn-convertir" class="btn-primary"><i class="fas fa-calculator"></i> Convertir</button>
+          <button id="btn-copiar" class="btn-secondary"><i class="fas fa-copy"></i> Copiar</button>
+          <button id="btn-qr" class="btn-secondary"><i class="fas fa-qrcode"></i> Generar QR</button>
+        </div>
+        <div id="qrcode" class="qrcode hidden"></div>
+      </section>
+
+      <section class="historial">
+        <h2>Historial <button id="btn-clear-hist" class="btn-danger"><i class="fas fa-trash"></i></button></h2>
+        <ul id="lista-hist"></ul>
+      </section>
+
+      <section class="grafico">
+        <h2>Tendencia últimas 10 conversiones (EUR-USD)</h2>
+        <canvas id="chartHist" width="400" height="200"></canvas>
+      </section>
+    </main>
+  </div>
+
+  <script src="conversor.js"></script>
+</body>
+</html>

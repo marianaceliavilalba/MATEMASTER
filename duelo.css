@@ -1,0 +1,111 @@
+:root{
+  --verde-oscuro:#1b5e20;
+  --verde-medio:#388e3c;
+  --verde-claro:#66bb6a;
+  --verde-menta:#c8e6c9;
+  --verde-suave:#e8f5e9;
+  --blanco:#fff;
+  --rojo:#f44336;
+  --sombra:rgba(0,0,0,.15);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+  background:linear-gradient(to bottom,var(--verde-suave),var(--verde-menta));
+  color:var(--verde-oscuro);
+  padding:10px;
+}
+.container{max-width:800px;margin:auto}
+header{
+  background:linear-gradient(to right,var(--verde-oscuro),var(--verde-medio));
+  color:var(--blanco);
+  padding:1.5rem;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 6px 15px var(--sombra);
+}
+header h1{font-size:2.2em;margin-bottom:10px}
+header p{font-size:1.1em;color:#dcedc8}
+nav a{
+  color:var(--blanco);
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:25px;
+  background:var(--verde-claro);
+  transition:all .3s ease;
+}
+nav a:hover{background:var(--verde-oscuro);transform:translateY(-2px)}
+main{margin-top:30px}
+.card{
+  background:var(--blanco);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 12px var(--sombra);
+}
+.center{text-align:center}
+.hidden{display:none}
+.btn-primary,.btn-secondary{
+  border:none;padding:10px 20px;border-radius:25px;font-weight:bold;cursor:pointer;transition:background .3s ease;margin:10px 5px;
+}
+.btn-primary{background:var(--verde-medio);color:var(--blanco)}
+.btn-primary:hover{background:var(--verde-oscuro)}
+.btn-secondary{background:var(--verde-claro);color:var(--blanco)}
+input[type=text]{
+  padding:10px;border:2px solid var(--verde-claro);border-radius:25px;font-size:1em;text-align:center;width:200px;margin:10px auto;display:block;
+}
+.spinner{
+  width:40px;height:40px;border:4px solid var(--verde-menta);border-top:4px solid var(--verde-oscuro);border-radius:50%;animation:spin 1s linear infinite;margin:20px auto;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* DUELO */
+.info-duelo{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;
+}
+.player{
+  background:var(--verde-suave);
+  padding:10px 20px;
+  border-radius:10px;
+  min-width:120px;
+  text-align:center;
+}
+.player.me{background:var(--verde-claro);color:var(--blanco)}
+.player span{display:block}
+.player .nombre{font-weight:bold}
+.player .puntos{font-size:1.5em;margin-top:5px}
+.timer{
+  font-size:2em;
+  font-weight:bold;
+  color:var(--verde-oscuro);
+}
+.pregunta-box{margin-bottom:20px}
+#pregunta{font-size:1.4em;margin-bottom:15px}
+.opciones{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opciones button{
+  background:var(--verde-suave);
+  border:2px solid var(--verde-claro);
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:all .3s ease;
+}
+.opciones button:hover{background:var(--verde-claro);color:var(--blanco)}
+.opciones button.correct{background:#4caf50;color:var(--blanco)}
+.opciones button.incorrect{background:#f44336;color:var(--blanco)}
+.feedback{
+  text-align:center;
+  font-size:1.2em;
+  font-weight:bold;
+  margin-top:10px;
+}
+.feedback.ok{color:#4caf50}
+.feedback.ko{color:#f44336}
+@media (max-width:600px){
+  .info-duelo{flex-direction:column;gap:10px}
+  .opciones{grid-template-columns:1fr}
+}

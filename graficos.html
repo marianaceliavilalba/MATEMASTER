@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Creador de Gráficos - MateMaster</title>
+  <link rel="stylesheet" href="graficos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-chart-line"></i> Creador de Gráficos</h1>
+      <p>Ingresa tus datos y visualiza estadísticas al instante</p>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Volver al inicio</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="form-section">
+        <h2>1. Ingresa tus datos</h2>
+        <div id="inputs" class="inputs-grid">
+          <div class="input-pair">
+            <input type="text" placeholder="Etiqueta" class="label-inp"/>
+            <input type="number" placeholder="Valor" class="value-inp"/>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button id="btn-add" class="btn-secondary"><i class="fas fa-plus"></i> Añadir fila</button>
+          <button id="btn-clear" class="btn-danger"><i class="fas fa-trash"></i> Limpiar</button>
+        </div>
+      </section>
+
+      <section class="chart-section">
+        <h2>2. Elige tipo de gráfico</h2>
+        <div class="chart-types">
+          <button class="btn-chart active" data-type="bar"><i class="fas fa-chart-bar"></i> Barras</button>
+          <button class="btn-chart" data-type="pie"><i class="fas fa-chart-pie"></i> Circular</button>
+          <button class="btn-chart" data-type="line"><i class="fas fa-chart-line"></i> Línea</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="export-actions">
+          <button id="btn-img" class="btn-secondary"><i class="fas fa-download"></i> Descargar imagen</button>
+          <button id="btn-csv" class="btn-secondary"><i class="fas fa-file-csv"></i> Descargar CSV</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="graficos.js"></script>
+</body>
+</html>

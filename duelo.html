@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Duelo Matemático - MateMaster</title>
+  <link rel="stylesheet" href="duelo.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-bolt"></i> Duelo Matemático</h1>
+      <p>2 jugadores • mismo teclado • tiempo real</p>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <!-- PASO 1: Elegir rol -->
+      <section id="rol-screen" class="center">
+        <h2>¿Cómo quieres jugar?</h2>
+        <button id="btn-crear" class="btn-primary"><i class="fas fa-plus"></i> Crear sala</button>
+        <button id="btn-unirse" class="btn-secondary"><i class="fas fa-sign-in-alt"></i> Unirse a sala</button>
+      </section>
+
+      <!-- PASO 2: Crear / Unirse -->
+      <section id="sala-screen" class="hidden center">
+        <h2 id="sala-titulo"></h2>
+        <input type="text" id="codigo" placeholder="Código de sala" maxlength="6">
+        <button id="btn-entrar" class="btn-primary">Entrar</button>
+      </section>
+
+      <!-- PASO 3: Esperando rival -->
+      <section id="wait-screen" class="hidden center">
+        <h2>Esperando rival...</h2>
+        <p>Tu código es: <b id="tu-codigo"></b></p>
+        <div class="spinner"></div>
+      </section>
+
+      <!-- PASO 4: Duelo -->
+      <section id="duelo-screen" class="hidden">
+        <div class="info-duelo">
+          <div class="player" id="p1">
+            <span class="nombre">Jugador 1</span>
+            <span class="puntos">0</span>
+          </div>
+          <div class="timer">10</div>
+          <div class="player" id="p2">
+            <span class="nombre">Jugador 2</span>
+            <span class="puntos">0</span>
+          </div>
+        </div>
+
+        <div class="pregunta-box">
+          <h3 id="pregunta"></h3>
+          <div id="opciones" class="opciones"></div>
+        </div>
+
+        <div id="feedback" class="feedback hidden"></div>
+      </section>
+
+      <!-- PASO 5: Final -->
+      <section id="final-screen" class="hidden center">
+        <h2>¡Duelo terminado!</h2>
+        <p id="ganador-text"></p>
+        <button id="btn-revancha" class="btn-primary"><i class="fas fa-redo"></i> Revancha</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="duelo.js"></script>
+</body>
+</html>

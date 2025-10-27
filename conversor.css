@@ -1,0 +1,82 @@
+:root{
+  --verde-oscuro:#1b5e20;
+  --verde-medio:#388e3c;
+  --verde-claro:#66bb6a;
+  --verde-menta:#c8e6c9;
+  --verde-suave:#e8f5e9;
+  --blanco:#fff;
+  --negro:#121212;
+  --sombra:rgba(0,0,0,.15);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+  background:var(--verde-suave);
+  color:var(--verde-oscuro);
+  transition:background .3s, color .3s;
+}
+body.dark{
+  background:var(--negro);
+  color:var(--verde-menta);
+}
+.container{max-width:900px;margin:auto;padding:10px}
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(to right,var(--verde-oscuro),var(--verde-medio));
+  color:var(--blanco);
+  padding:1.5rem;
+  border-radius:15px;
+  box-shadow:0 6px 15px var(--sombra);
+}
+header h1{font-size:2.2em}
+nav a,button{
+  color:var(--blanco);
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:25px;
+  background:var(--verde-claro);
+  border:none;cursor:pointer;
+  transition:all .3s ease;
+}
+nav a:hover,button:hover{background:var(--verde-oscuro);transform:translateY(-2px)}
+main{margin-top:30px}
+.card{
+  background:var(--blanco);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 12px var(--sombra);
+}
+body.dark .card{background:var(--negro)}
+h2{margin-bottom:15px;color:var(--verde-oscuro)}
+body.dark h2{color:var(--verde-menta)}
+label{font-weight:bold}
+select,input,output{
+  padding:10px;border:2px solid var(--verde-claro);border-radius:10px;font-size:1em;
+}
+.conversor{display:flex;flex-direction:column;gap:15px;margin-bottom:25px}
+.inputs-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.inputs-row input,select,output{flex:1;min-width:120px}
+output{font-weight:bold;text-align:center}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.qrcode{margin-top:15px;text-align:center}
+.historial{margin-top:25px}
+#lista-hist{list-style:none;max-height:200px;overflow-y:auto}
+#lista-hist li{
+  background:var(--verde-menta);
+  padding:8px 12px;
+  border-radius:8px;
+  margin-bottom:5px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+body.dark #lista-hist li{background:rgba(200,230,201,.2)}
+.grafico{margin-top:25px}
+#chartHist{max-width:100%;height:250px}
+.hidden{display:none}
+@media (max-width:600px){
+  .inputs-row{flex-direction:column}
+}

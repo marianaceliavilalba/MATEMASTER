@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolutor de Matemáticas Avanzado</title>
+    <link rel="stylesheet" href="procedimiento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧮 Resolutor de Matemáticas Avanzado</h1>
+            <p>Ingresa tu problema con la calculadora científica y obtén la solución paso a paso</p>
+            <nav>
+                <center>
+                <a href="index.html">Pagina Principal</a></li>
+                </center>
+            </nav>
+        </header>
+        <main>
+            <!-- Calculadora Científica -->
+            <section class="calculator-section">
+                <div class="calculator">
+                    <div class="calc-display">
+                        <input type="text" id="calc-display" readonly placeholder="0">
+                        <button class="btn-calc-clear" onclick="clearCalc()">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="calc-buttons">
+                        <!-- Fila 1 - Números y operaciones básicas -->
+                        <div class="calc-row">
+                            <button class="btn-calc" onclick="addToCalc('7')">7</button>
+                            <button class="btn-calc" onclick="addToCalc('8')">8</button>
+                            <button class="btn-calc" onclick="addToCalc('9')">9</button>
+                            <button class="btn-calc operator" onclick="addToCalc('/')">÷</button>
+                            <button class="btn-calc function" onclick="addToCalc('^2')">x²</button>
+                        </div>
+                        
+                        <!-- Fila 2 -->
+                        <div class="calc-row">
+                            <button class="btn-calc" onclick="addToCalc('4')">4</button>
+                            <button class="btn-calc" onclick="addToCalc('5')">5</button>
+                            <button class="btn-calc" onclick="addToCalc('6')">6</button>
+                            <button class="btn-calc operator" onclick="addToCalc('*')">×</button>
+                            <button class="btn-calc function" onclick="addToCalc('^')">x^y</button>
+                        </div>
+                        
+                        <!-- Fila 3 -->
+                        <div class="calc-row">
+                            <button class="btn-calc" onclick="addToCalc('1')">1</button>
+                            <button class="btn-calc" onclick="addToCalc('2')">2</button>
+                            <button class="btn-calc" onclick="addToCalc('3')">3</button>
+                            <button class="btn-calc operator" onclick="addToCalc('-')">−</button>
+                            <button class="btn-calc function" onclick="addToCalc('sqrt(')">√</button>
+                        </div>
+                        
+                        <!-- Fila 4 -->
+                        <div class="calc-row">
+                            <button class="btn-calc" onclick="addToCalc('0')">0</button>
+                            <button class="btn-calc" onclick="addToCalc('.')">.</button>
+                            <button class="btn-calc operator" onclick="addToCalc('+')">+</button>
+                            <button class="btn-calc function" onclick="addToCalc('(')">(</button>
+                            <button class="btn-calc function" onclick="addToCalc(')')">)</button>
+                        </div>
+                        
+                        <!-- Fila 5 - Variables y funciones especiales -->
+                        <div class="calc-row">
+                            <button class="btn-calc variable" onclick="addToCalc('x')">x</button>
+                            <button class="btn-calc variable" onclick="addToCalc('y')">y</button>
+                            <button class="btn-calc variable" onclick="addToCalc('z')">z</button>
+                            <button class="btn-calc function" onclick="addToCalc('pi')">π</button>
+                            <button class="btn-calc function" onclick="addToCalc('e')">e</button>
+                        </div>
+                        
+                        <!-- Fila 6 - Funciones avanzadas -->
+                        <div class="calc-row">
+                            <button class="btn-calc function" onclick="addToCalc('sen(')">sin</button>
+                            <button class="btn-calc function" onclick="addToCalc('cos(')">cos</button>
+                            <button class="btn-calc function" onclick="addToCalc('tan(')">tan</button>
+                            <button class="btn-calc function" onclick="addToCalc('ln(')">ln</button>
+                            <button class="btn-calc function" onclick="addToCalc('log(')">log</button>
+                        </div>
+                        
+                        <!-- Fila 7 - Símbolos matemáticos especiales -->
+                        <div class="calc-row">
+                            <button class="btn-calc special" onclick="addToCalc('≤')">≤</button>
+                            <button class="btn-calc special" onclick="addToCalc('≥')">≥</button>
+                            <button class="btn-calc special" onclick="addToCalc('≠')">≠</button>
+                            <button class="btn-calc special" onclick="addToCalc('∞')">∞</button>
+                            <button class="btn-calc special" onclick="addToCalc('±')">±</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección para ingresar el problema -->
+            <section class="input-section">
+                <div class="form-group">
+                    <label for="tema">Selecciona el tema:</label>
+                    <select id="tema">
+                        <option value="">-- Selecciona un tema --</option>
+                        <optgroup label="Factorización">
+                            <option value="factor-comun">Factor Común</option>
+                            <option value="diferencia-cuadrados">Diferencia de Cuadrados</option>
+                            <option value="aspa-simple">Aspa Simple</option>
+                            <option value="trinomio-cuadrado-perfecto">Trinomio Cuadrado Perfecto</option>
+                            <option value="aspa-doble">Aspa Doble</option>
+                        </optgroup>
+                        <optgroup label="Álgebra">
+                            <option value="ecuaciones-lineales">Ecuaciones Lineales</option>
+                            <option value="sistemas-ecuaciones">Sistemas de Ecuaciones</option>
+                            <option value="ecuaciones-cuadraticas">Ecuaciones Cuadráticas</option>
+                        </optgroup>
+                        <optgroup label="Cálculo">
+                            <option value="derivadas">Derivadas</option>
+                            <option value="integrales">Integrales</option>
+                        </optgroup>
+                        <optgroup label="Aritmética">
+                            <option value="fracciones">Fracciones</option>
+                            <option value="porcentajes">Porcentajes</option>
+                            <option value="potencias">Potencias y Raíces</option>
+                            <option value="logaritmos">Logaritmos</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="problema">Escribe tu problema:</label>
+                    <textarea 
+                        id="problema" 
+                        placeholder="Usa la calculadora para escribir tu problema. Ejemplo: x^2 + 5x + 6"
+                        rows="4"
+                    ></textarea>
+                    <div class="input-actions">
+                        <button type="button" class="btn-input-action" onclick="insertFromCalc()">
+                            <i class="fas fa-calculator"></i> Insertar de calculadora
+                        </button>
+                        <button type="button" class="btn-input-action" onclick="clearProblem()">
+                            <i class="fas fa-eraser"></i> Limpiar
+                        </button>
+                    </div>
+                </div>
+
+                <button id="btnResolver" class="btn-primary">
+                    🔍 Resolver Problema
+                </button>
+            </section>
+
+            <!-- Sección de solución -->
+            <section id="solucion-section" class="solution-section" style="display: none;">
+                <h2>Solución Paso a Paso</h2>
+                <div id="solucion-pasos" class="pasos-container"></div>
+                
+                <div class="respuesta-final">
+                    <strong>Respuesta Final:</strong>
+                    <span id="respuesta-final"></span>
+                </div>
+            </section>
+
+            <!-- Sección de ejercicios adicionales -->
+            <section id="ejercicios-section" class="exercises-section" style="display: none;">
+                <h2>📝 Más ejercicios para practicar</h2>
+                <div id="ejercicios-lista" class="exercises-list"></div>
+                
+                <div class="practice-controls">
+                    <button id="btnNuevosEjercicios" class="btn-secondary">
+                        🔄 Nuevos Ejercicios
+                    </button>
+                    <button id="btnResolverOtro" class="btn-secondary">
+                        ✏️ Resolver Otro Problema
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="procedimiento.js"></script>
+</body>
+</html>

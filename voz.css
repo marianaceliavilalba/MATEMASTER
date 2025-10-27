@@ -1,0 +1,88 @@
+:root{
+  --verde-oscuro:#1b5e20;
+  --verde-medio:#388e3c;
+  --verde-claro:#66bb6a;
+  --verde-menta:#c8e6c9;
+  --verde-suave:#e8f5e9;
+  --blanco:#fff;
+  --sombra:rgba(0,0,0,.15);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+body{
+  background:linear-gradient(to bottom,var(--verde-suave),var(--verde-menta));
+  color:var(--verde-oscuro);
+  padding:10px;
+}
+.container{max-width:600px;margin:auto}
+header{
+  background:linear-gradient(to right,var(--verde-oscuro),var(--verde-medio));
+  color:var(--blanco);
+  padding:1.5rem;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 6px 15px var(--sombra);
+}
+header h1{font-size:2.2em;margin-bottom:10px}
+header p{font-size:1.1em;color:#dcedc8}
+nav a{
+  color:var(--blanco);
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:25px;
+  background:var(--verde-claro);
+  transition:all .3s ease;
+}
+nav a:hover{background:var(--verde-oscuro);transform:translateY(-2px)}
+main{margin-top:30px}
+.card{
+  background:var(--blanco);
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 12px var(--sombra);
+}
+.voice-section{text-align:center}
+.btn-mic{
+  background:var(--verde-claro);
+  color:var(--blanco);
+  border:none;
+  padding:30px;
+  border-radius:50%;
+  font-size:1.5em;
+  cursor:pointer;
+  transition:background .3s ease, transform .2s ease;
+}
+.btn-mic:hover{background:var(--verde-medio);transform:scale(1.05)}
+.btn-mic.recording{background:#f44336}
+.transcription{
+  margin-top:15px;
+  font-size:1.2em;
+  min-height:40px;
+  color:var(--verde-oscuro);
+  font-weight:bold;
+}
+.result-box{margin-top:25px}
+.result-box h2{margin-bottom:10px}
+#result-text{font-size:1.4em;color:var(--verde-oscuro)}
+.btn-secondary{
+  background:var(--verde-medio);
+  color:var(--blanco);
+  border:none;
+  padding:10px 20px;
+  border-radius:25px;
+  cursor:pointer;
+  transition:background .3s ease;
+}
+.btn-secondary:hover{background:var(--verde-oscuro)}
+.examples{margin-top:25px}
+.examples h3{margin-bottom:10px}
+.examples ul{margin-left:20px}
+.hidden{display:none}
+@media (max-width:600px){
+  .btn-mic{padding:20px;font-size:1.3em}
+}

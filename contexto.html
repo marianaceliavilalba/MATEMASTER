@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Problemas con Contexto - MateMaster</title>
+  <link rel="stylesheet" href="contexto.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-book-open"></i> Problemas con Contexto</h1>
+      <p>Lee, comprende y resuelve situaciones reales</p>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="config">
+        <label>Tema:
+          <select id="tema">
+            <option value="compras">Compras</option>
+            <option value="deportes">Deportes</option>
+            <option value="viajes">Viajes</option>
+            <option value="cocina">Cocina</option>
+          </select>
+        </label>
+        <label>Dificultad:
+          <select id="dificultad">
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+          </select>
+        </label>
+        <button id="btn-generar" class="btn-primary"><i class="fas fa-sync"></i> Generar problema</button>
+      </section>
+
+      <section id="problema-box" class="hidden">
+        <h2>Historia</h2>
+        <div id="historia" class="historia"></div>
+
+        <h3>Pregunta</h3>
+        <p id="pregunta" class="pregunta"></p>
+
+        <div class="opciones" id="opciones"></div>
+
+        <button id="btn-resolver" class="btn-secondary hidden">Resolver paso a paso</button>
+
+        <div id="solucion-box" class="solucion-box hidden">
+          <h3>Solución paso a paso</h3>
+          <ol id="pasos"></ol>
+          <div class="pizarra-container">
+            <canvas id="pizarra" width="600" height="300"></canvas>
+            <div class="pizarra-controls">
+              <button onclick="borrarPizarra()"><i class="fas fa-eraser"></i> Borrar</button>
+              <input type="color" id="color-piz" value="#000000">
+              <input type="range" id="grosor-piz" min="1" max="10" value="3">
+              <button onclick="cerrarPizarra()"><i class="fas fa-times"></i> Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="contexto.js"></script>
+</body>
+</html>

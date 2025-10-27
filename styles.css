@@ -1,0 +1,211 @@
+/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+    color: #1b5e20;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: linear-gradient(to right, #1b5e20, #2e7d32);
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #dcedc8;
+}
+
+/* ===== NAV ===== */
+nav {
+    background-color: #388e3c;
+    padding: 15px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: #4caf50;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #66bb6a;
+    transform: translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== SECTIONS ===== */
+.math-section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.2em;
+    color: #1b5e20;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #66bb6a;
+    padding-bottom: 10px;
+}
+
+/* ===== CARDS ===== */
+.topic-card, .game-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.topic-card:hover, .game-card:hover {
+    transform: translateY(-5px);
+}
+
+.topic-card h3, .game-card h3 {
+    color: #2e7d32;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.topic-card p, .game-card p {
+    color: #388e3c;
+    margin-bottom: 15px;
+}
+
+/* ===== EXERCISE BOXES ===== */
+.exercise-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.exercise-box, .exercise-example {
+    flex: 1 1 45%;
+    background-color: #f1f8e9;
+    border: 2px solid #a5d6a7;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.exercise-box button, .game-card button {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.exercise-box button:hover, .game-card button:hover {
+    background-color: #2e7d32;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* ===== OPTIONS ===== */
+.exercise-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.exercise-options button {
+    background-color: #66bb6a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.exercise-options button:hover {
+    background-color: #4caf50;
+}
+
+/* ===== PIZARRA ===== */
+.pizarra-ejercicio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pizarra-ejercicio canvas {
+    border: 2px solid #388e3c !important;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.controles {
+    margin-top: 10px;
+}
+
+.controles button, .controles input {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #66bb6a;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #1b5e20;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .exercise-container {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+}

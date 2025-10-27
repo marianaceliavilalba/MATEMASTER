@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MateMaster - Aprende Matemáticas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>MateMaster</h1>
+        <p>Aprende matemáticas de forma interactiva</p>
+    </header>
+    
+    <nav>
+        <center>
+            <a href="quiz.html">Quiz</a>
+            <a href="#primary">Primaria</a></li>
+            <a href="#secondary">Secundaria</a></li>
+            <a href="#games">Juegos</a>
+            <a href="videos3.html">Videos Explicativos</a>
+            <a href="voz.html">Resulutor x Voz</a>
+            <a href="conversor.html">Conversor</a>
+            <a href="procedimiento.html">Procedimiento</a>
+            <a href="profesor.html">Progreso</a>
+        </center>
+    </nav>
+    
+    <div class="container">
+        <section id="primary" class="math-section">
+            <h2 class="section-title">Matemáticas para Primaria</h2>
+            
+            <div class="topic-card">
+                <h3>Suma y Resta</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="addition-subtraction-exercise">
+                        <p>Resuelve: <span id="addition-subtraction-problem"></span></p>
+                        <div class="exercise-options" id="addition-subtraction-options"></div>
+                        <button onclick="checkAdditionSubtraction()">Verificar</button>
+                        <p class="result" id="addition-subtraction-result"></p>
+                        <button onclick="mostrarPizarra('suma')">Resolver</button>
+                            <!-- Pizarra privada de suma/resta -->
+                        <div id="pizarra-suma-contenedor" class="pizarra-ejercicio" style="display:none; text-align:center;">
+                            <canvas id="pizarra-suma" width="600" height="300" style="border:2px solid #000;"></canvas>
+                            <div class="controles">
+                                <button onclick="borrarPizarra('suma')">Borrar</button>
+                                <input type="color" id="color-suma" value="#000000">
+                                <input type="range" id="grosor-suma" min="1" max="10" value="3">
+                                <button onclick="cerrarPizarra('suma')">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Resuelve: 7 + 5 - 3 = ?</p>
+                        <p>Solución: Primero suma 7 + 5 = 12, luego resta 3: 12 - 3 = 9</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <h3>Multiplicación</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="multiplication-exercise">
+                        <p>Resuelve: <span id="multiplication-problem"></span></p>
+                        <div class="exercise-options" id="multiplication-options"></div>
+                        <button onclick="checkMultiplication()">Verificar</button>
+                        <p class="result" id="multiplication-result"></p>
+                        <button onclick="mostrarPizarra('mult')">Resolver</button>
+                        <div id="pizarra-mult-contenedor" class="pizarra-ejercicio" style="display:none;">
+                            <canvas id="pizarra-mult" width="600" height="300"></canvas>
+                            <div class="controles">
+                                <button onclick="borrarPizarra('mult')">Borrar</button>
+                                <input type="color" id="color-mult" value="#000000">
+                                <input type="range" id="grosor-mult" min="1" max="10" value="3">
+                                <button onclick="cerrarPizarra('mult')">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Resuelve: 6 × 4 = ?</p>
+                        <p>Solución: 6 grupos de 4 son 24 elementos en total</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <h3>División</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="division-exercise">
+                        <p>Resuelve: <span id="division-problem"></span></p>
+                        <div class="exercise-options" id="division-options"></div>
+                        <button onclick="checkDivision()">Verificar</button>
+                        <p class="result" id="division-result"></p>
+                            <button onclick="mostrarPizarra('div')">Resolver</button>
+                            <div id="pizarra-div-contenedor" class="pizarra-ejercicio" style="display:none;">
+                                <canvas id="pizarra-div" width="600" height="300"></canvas>
+                                <div class="controles">
+                                    <button onclick="borrarPizarra('div')">Borrar</button>
+                                    <input type="color" id="color-div" value="#000000">
+                                    <input type="range" id="grosor-div" min="1" max="10" value="3">
+                                    <button onclick="cerrarPizarra('div')">Cerrar</button>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Resuelve: 20 ÷ 4 = ?</p>
+                        <p>Solución: 20 dividido en 4 grupos iguales da 5 en cada grupo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="secondary" class="math-section">
+            <h2 class="section-title">Matemáticas para Secundaria</h2>
+            
+            <div class="topic-card">
+                <h3>Factorización</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="factoring-exercise">
+                        <p>Factoriza: <span id="factoring-problem"></span></p>
+                        <div class="exercise-options" id="factoring-options"></div>
+                        <button onclick="checkFactoring()">Verificar</button>
+                        <p class="result" id="factoring-result"></p>
+                            <button onclick="mostrarPizarra('fac')">Resolver</button>
+                            <div id="pizarra-fac-contenedor" class="pizarra-ejercicio" style="display:none;">
+                                <canvas id="pizarra-fac" width="600" height="300"></canvas>
+                                <div class="controles">
+                                    <button onclick="borrarPizarra('fac')">Borrar</button>
+                                    <input type="color" id="color-fac" value="#000000">
+                                    <input type="range" id="grosor-fac" min="1" max="10" value="3">
+                                    <button onclick="cerrarPizarra('fac')">Cerrar</button>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Factoriza: x² + 5x + 6</p>
+                        <p>Solución: (x + 2)(x + 3)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <h3>Estadística</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="statistics-exercise">
+                        <p>Calcula la media: <span id="statistics-problem"></span></p>
+                        <div class="exercise-options" id="statistics-options"></div>
+                        <button onclick="checkStatistics()">Verificar</button>
+                        <p class="result" id="statistics-result"></p>
+                        <button onclick="mostrarPizarra('estad')">Resolver</button>
+                            <div id="pizarra-estad-contenedor" class="pizarra-ejercicio" style="display:none;">
+                                <canvas id="pizarra-estad" width="600" height="300"></canvas>
+                                <div class="controles">
+                                    <button onclick="borrarPizarra('estad')">Borrar</button>
+                                    <input type="color" id="color-estad" value="#000000">
+                                    <input type="range" id="grosor-estad" min="1" max="10" value="3">
+                                    <button onclick="cerrarPizarra('estad')">Cerrar</button>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Calcula la media de: 4, 6, 8</p>
+                        <p>Solución: (4 + 6 + 8)/3 = 18/3 = 6</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-card">
+                <h3>Álgebra</h3>
+                <p>Selecciona la respuesta correcta:</p>
+                
+                <div class="exercise-container">
+                    <div class="exercise-box" id="algebra-exercise">
+                        <p>Resuelve: <span id="algebra-problem"></span></p>
+                        <div class="exercise-options" id="algebra-options"></div>
+                        <button onclick="checkAlgebra()">Verificar</button>
+                        <p class="result" id="algebra-result"></p>
+                        <button onclick="mostrarPizarra('alg')">Resolver</button>
+                            <div id="pizarra-alg-contenedor" class="pizarra-ejercicio" style="display:none;">
+                                <canvas id="pizarra-alg" width="600" height="300"></canvas>
+                                <div class="controles">
+                                    <button onclick="borrarPizarra('alg')">Borrar</button>
+                                    <input type="color" id="color-alg" value="#000000">
+                                    <input type="range" id="grosor-alg" min="1" max="10" value="3">
+                                    <button onclick="cerrarPizarra('alg')">Cerrar</button>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <div class="exercise-example">
+                        <h4>Ejemplo:</h4>
+                        <p>Resuelve: 2x + 5 = 11</p>
+                        <p>Solución: x = 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="games" class="math-section">
+            <h2 class="section-title">Juegos Matemáticos</h2>
+            
+            <div class="game-card">
+                <h3>Suma Rápida</h3>
+                <p>Juego para practicar sumas rápidas.</p>
+                <button onclick="startSumGame()">Iniciar Juego</button>
+                <div id="sum-game" style="display:none; margin-top:15px;">
+                    <p id="sum-game-problem"></p>
+                    <div class="exercise-options" id="sum-game-options"></div>
+                    <button onclick="checkSumGame()">Responder</button>
+                    <p id="sum-game-score">Puntuación: 0</p>
+                </div>
+            </div>
+            
+            <div class="game-card">
+                <h3>Comparación de Fracciones</h3>
+                <p>Juego para aprender a comparar fracciones.</p>
+                <button onclick="startFractionGame()">Iniciar Juego</button>
+                <div id="fraction-game" style="display:none; margin-top:15px;">
+                    <p id="fraction-game-problem"></p>
+                    <div class="exercise-options" id="fraction-game-options">
+                        <button class="option-btn" onclick="selectFractionOption(this, 'greater')">></button>
+                        <button class="option-btn" onclick="selectFractionOption(this, 'equal')">=</button>
+                        <button class="option-btn" onclick="selectFractionOption(this, 'less')"><</button>
+                    </div>
+                    <button onclick="checkFractionGame()">Responder</button>
+                    <p id="fraction-game-score">Puntuación: 0</p>
+                </div>
+            </div>
+            <!-- === JUEGO DE MEMORIA === -->
+            <div class="game-card">
+                <h3><i class="fas fa-brain"></i> Memoria Matemática</h3>
+                <p>Empareja operaciones con sus resultados. ¡Elige tu nivel de dificultad!</p>
+                <a href="memoria.html" class="btn-verde">Jugar ahora</a>
+            </div>
+            <div class="game-card">
+                <h3><i class="fas fa-chart-bar"></i> Creador de Gráficos</h3>
+                <p>Dibuja barras, circulares o líneas con tus propios datos.</p>
+                <a href="graficos.html" class="btn-verde">Crear gráfico</a>
+            </div>
+            <div class="game-card">
+                <h3><i class="fas fa-book-open"></i> Problemas con Contexto</h3>
+                <p>Lee historias y resuelve paso a paso.</p>
+                <a href="contexto.html" class="btn-verde">Resolver problemas</a>
+            </div>
+            <div class="game-card">
+                <h3><i class="fas fa-table"></i> Tabla Periódica Matemática</h3>
+                <p>Fórmulas, ejercicios y modo oscuro verde-neón.</p>
+                <a href="tabla.html" class="btn-verde">Explorar tabla</a>
+            </div>
+            <div class="game-card">
+                <h3><i class="fas fa-bolt"></i> Duelo Matemático</h3>
+                <p>2 jugadores • mismo teclado • tiempo real</p>
+                <a href="duelo.html" class="btn-verde">Jugar duelo</a>
+            </div>
+
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; Promo2025 MateMaster. Practica y Aprende.</p>
+        <p>Resueltos: <span id="solved-count">0</span> ejercicios</p>
+    </footer>
+    <div id="splash-screen" style="
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: #111;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        font-family: sans-serif;
+        ">
+        <h2>Bienvenido a mi sitio</h2>
+        <form id="splash-form" style="display: flex; flex-direction: column; gap: 10px; width: 300px;">
+            <input type="text" id="userName" placeholder="Tu nombre" required />
+            <input type="email" id="userEmail" placeholder="Tu correo" required />
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="welcome-back" style="display: none;"></p>
+    </div>
+    <script>
+  (function () {
+    const splash = document.getElementById('splash-screen');
+    const form = document.getElementById('splash-form');
+    const welcomeBack = document.getElementById('welcome-back');
+
+    const STORAGE_KEY = 'userData';
+    const START_TIME_KEY = 'startTime';
+
+    function hideSplash() {
+      splash.style.display = 'none';
+      localStorage.setItem(START_TIME_KEY, Date.now());
+    }
+    function showWelcomeBack(user) {
+      const lastDuration = localStorage.getItem('lastDuration');
+      const minutes = lastDuration ? Math.round(lastDuration / 60000) : 0;
+      welcomeBack.innerHTML = `¡Hola de nuevo, <strong>${user.name}</strong>!<br>La última vez estuviste ${minutes} minuto(s) en la página.`;
+      welcomeBack.style.display = 'block';
+      form.style.display = 'none';
+      setTimeout(hideSplash, 3000);
+    }
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const user = JSON.parse(saved);
+      showWelcomeBack(user);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      if (!name || !email) return;
+
+      const user = { name, email };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+      hideSplash();
+    });
+    window.addEventListener('beforeunload', function () {
+      const start = parseInt(localStorage.getItem(START_TIME_KEY));
+      if (start) {
+        const duration = Date.now() - start;
+        localStorage.setItem('lastDuration', duration);
+      }
+    });
+  })();
+</script>
+<script src="scripts.js"></script>
+</body>
+</html>

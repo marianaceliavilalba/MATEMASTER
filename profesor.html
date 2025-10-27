@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Panel Profesor - MateMaster</title>
+  <link rel="stylesheet" href="profesor.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-chalkboard-teacher"></i> Panel Profesor</h1>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Volver al inicio</a>
+        <button id="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+      </nav>
+    </header>
+
+    <!-- LOGIN SIMPLE -->
+    <section id="login-box" class="card">
+      <h2>Acceso docente</h2>
+      <input type="password" id="clave" placeholder="Clave de acceso"/>
+      <button id="btn-login" class="btn-primary">Entrar</button>
+      <p id="login-error" class="hidden">Clave incorrecta</p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="hidden">
+      <div class="card">
+        <h2>Resumen general</h2>
+        <div class="resumen">
+          <div><i class="fas fa-users"></i> Alumnos activos: <b id="total-alu">0</b></div>
+          <div><i class="fas fa-check-circle"></i> Ejercicios totales resueltos: <b id="total-ej">0</b></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Detalle por alumno</h2>
+        <table id="tabla-alumnos">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Ejercicios resueltos</th>
+              <th>Última vez</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody><!-- se llena con JS --></tbody>
+        </table>
+        <div class="acciones-globales">
+          <button id="btn-reset-all" class="btn-danger"><i class="fas fa-trash"></i> Reiniciar todos</button>
+          <button id="btn-csv" class="btn-secondary"><i class="fas fa-download"></i> Descargar CSV</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="profesor.js"></script>
+</body>
+</html>
